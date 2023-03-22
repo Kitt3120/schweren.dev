@@ -1,10 +1,12 @@
 <template>
-  <NavigationBar />
+  <NavigationMenu />
+  <HeaderBar />
   <router-view />
 </template>
 
 <script setup lang="ts">
-import NavigationBar from "./components/NavigationBar.vue";
+import NavigationMenu from "@/components/buttons/HamburgerButton.vue";
+import HeaderBar from "@/components/HeaderBar.vue";
 </script>
 
 <style lang="scss">
@@ -14,5 +16,15 @@ import NavigationBar from "./components/NavigationBar.vue";
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+}
+
+body {
+  padding: 0px;
+  margin: 0px;
+}
+
+html {
+  padding: 0px;
+  margin: 0px;
 }
 </style>
