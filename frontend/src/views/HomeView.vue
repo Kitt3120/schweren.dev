@@ -6,10 +6,10 @@
   </div>
 </template>
 
-<style scoped></style>
-
 <script setup lang="ts">
 import { Ref, ref } from "vue";
 
 const counter: Ref<number> = ref(0);
 </script>
+
+<style scoped lang="scss"></style>

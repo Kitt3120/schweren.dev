@@ -1,11 +1,11 @@
 <template>
-  <NavigationMenu />
+  <HamburgerButton />
   <HeaderBar />
   <router-view />
 </template>
 
 <script setup lang="ts">
-import NavigationMenu from "@/components/buttons/HamburgerButton.vue";
+import HamburgerButton from "@/components/buttons/HamburgerButton.vue";
 import HeaderBar from "@/components/HeaderBar.vue";
 </script>
 

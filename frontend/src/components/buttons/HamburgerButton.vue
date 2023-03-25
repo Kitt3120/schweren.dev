@@ -1,51 +1,63 @@
 <template>
-  <button class="hamburger">
-    <div class="row-1"></div>
-    <div class="row-2"></div>
-    <div class="row-3"></div>
+  <button :class="{ active: isActive }" @click="onClick">
+    <div class="row-1" :class="{ active: isActive }"></div>
+    <div class="row-2" :class="{ active: isActive }"></div>
+    <div class="row-3" :class="{ active: isActive }"></div>
   </button>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { Ref, ref } from "vue";
+
+const isActive: Ref<boolean> = ref(false);
+
+const onClick = () => {
+  isActive.value = !isActive.value;
+};
+</script>
 
 <style scoped lang="scss">
-.hamburger {
-  position: fixed;
+button {
   display: block;
   width: 50px;
   height: 50px;
-  top: 10px;
-  right: 10px;
+
+  cursor: pointer;
   background: none;
   border: none;
   outline: none;
   appearance: none;
-  cursor: pointer;
+
+  transition: 0.5s ease-in-out;
 }
 
-.hamburger div {
-  content: "";
+button div {
   display: block;
   width: 100%;
   height: 5px;
-  background: gray;
   margin: 6px 0px;
-  transition: 0.3s;
+  background: gray;
+
+  content: "";
+
+  transition: 0.5s ease-in-out;
 }
 
-.hamburger.is-active {
-  background: red;
+button.active {
+  transform: rotate(-180deg);
 }
 
-.hamburger.is-active .row-1 {
-  transform: rotate(45deg) translate(7px, 7px);
+.row-1.active {
+  transform: rotate(25deg) translate(2px, 2px);
+  border-radius: 33%;
 }
 
-.hamburger-row-2.is-active {
+.row-2.active {
   opacity: 0;
 }
 
-.hamburger-row-3.is-active {
-  transform: rotate(-45deg) translate(7px, -7px);
+.row-3.active {
+  transform: rotate(-25deg) translate(2px, -2px);
+  border-radius: 33%;
 }
 </style>
