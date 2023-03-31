@@ -1,12 +1,10 @@
 <template>
-  <HamburgerButton />
-  <HeaderBar />
+  <NavBar />
   <router-view />
 </template>
 
 <script setup lang="ts">
-import HamburgerButton from "@/components/buttons/HamburgerButton.vue";
-import HeaderBar from "@/components/HeaderBar.vue";
+import NavBar from "@/components/panels/NavBar.vue";
 </script>
 
 <style lang="scss">
@@ -15,16 +13,15 @@ import HeaderBar from "@/components/HeaderBar.vue";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: #fff;
+  height: 100%;
 }
 
+html,
 body {
   padding: 0px;
   margin: 0px;
-}
-
-html {
-  padding: 0px;
-  margin: 0px;
+  height: 100%;
+  background: #2b2b2b;
 }
 </style>
