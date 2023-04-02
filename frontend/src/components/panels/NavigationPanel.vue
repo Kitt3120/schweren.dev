@@ -1,23 +1,31 @@
 import HamburgerButton from '../buttons/HamburgerButton.vue';
 
 <template>
-  <HamburgerButton @click="($event) => (menuOpen = !menuOpen)" class="button" />
+  <HamburgerButton
+    @click="($event) => (menuOpen = !menuOpen)"
+    class="hamburger-button"
+  />
   <Transition name="slide">
     <div v-show="menuOpen" class="menu">
-      <button>Test</button>
+      <PillButton class="menu-entry">Test</PillButton>
+      <PillButton class="menu-entry">Test</PillButton>
+      <PillButton class="menu-entry">Test</PillButton>
+      <PillButton class="menu-entry">Test</PillButton>
+      <PillButton class="menu-entry">Test</PillButton>
     </div>
   </Transition>
 </template>
 
 <script setup lang="ts">
 import { Ref, ref } from "vue";
-import HamburgerButton from "../buttons/HamburgerButton.vue";
+import HamburgerButton from "@/components/buttons/HamburgerButton.vue";
+import PillButton from "@/components/buttons/PillButton.vue";
 
 const menuOpen: Ref<boolean> = ref(false);
 </script>
 
 <style scoped lang="scss">
-.button {
+.hamburger-button {
   position: fixed;
   display: inline;
   top: 1rem;
@@ -26,7 +34,9 @@ const menuOpen: Ref<boolean> = ref(false);
 
 .menu {
   position: fixed;
-  display: inline;
+  display: flexbox;
+  flex-direction: column;
+  justify-content: space-around;
   top: 0;
   left: 80%;
   width: 20%;
@@ -34,6 +44,10 @@ const menuOpen: Ref<boolean> = ref(false);
   background: #313131;
   box-shadow: -5px 0 35px rgba(0, 0, 0, 0.5);
   z-index: 99;
+}
+
+.menu-entry {
+  display: block;
 }
 
 .slide-enter-active,

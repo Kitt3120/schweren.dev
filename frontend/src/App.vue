@@ -17,7 +17,7 @@ html,
 body {
   padding: 0px;
   margin: 0px;
-  color: #fff;
+  color: #ffffff;
   background: #2b2b2b;
   font-family: Roboto, Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
