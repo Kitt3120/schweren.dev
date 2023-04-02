@@ -13,11 +13,8 @@ const counter: Ref<number> = ref(0);
 </script>
 
 <style scoped lang="scss">
-.home {
-  margin-top: 5rem;
-}
-
 h1 {
-  height: 200rem;
+  margin-top: 25rem;
+  height: 10rem;
 }
 </style>

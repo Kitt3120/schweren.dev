@@ -1,6 +1,7 @@
 <template>
   <div class="navbar">
     <div class="logo" />
+
     <!-- <div class="links">
       <router-link to="/">Home</router-link>
       |
@@ -23,7 +24,7 @@ import HamburgerButton from "@/components/buttons/HamburgerButton.vue";
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   background: transparent;
 }
 

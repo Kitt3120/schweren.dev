@@ -21,6 +21,7 @@ button {
   display: block;
   width: 50px;
   height: 50px;
+  z-index: 100;
 
   cursor: pointer;
   background: none;
